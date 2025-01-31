@@ -1,6 +1,6 @@
-<library path="legged_template_controller">
-    <class name="legged_template_controller/TemplateController"
-           type="legged::TemplateController"
+<library path="genlocov2_controllers">
+    <class name="genlocov2_controllers/Genlocov2Controllers"
+           type="legged::Genlocov2Controllers"
            base_class_type="controller_interface::ControllerInterface">
         <description>
             Template controller for legged robot.
