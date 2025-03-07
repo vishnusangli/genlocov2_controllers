@@ -1,5 +1,6 @@
 #pragma once
 
+#include "legged_rl_controllers/OnnxController.h"
 #include <deque>
 
 constexpr int NumDOF = 12;
@@ -29,7 +30,7 @@ class ObsShaper {
         void resetHistoryBuffer();
         void insertObs(const quaternion_t& quaternion, const vector_t& jointPos, const vector_t& actions);
         void exportObs(vector_t& policy_obs);
-        void exportFlatObs(const vector_t& flat_policy_obs);
-        void exportFlatObsSep(const vector_t& global_obs, const vector_t& dof_obs);
+        void exportFlatObs(vector_t& flat_policy_obs);
+        void exportFlatObsSep(vector_t& global_obs, vector_t& dof_obs);
 };
 }

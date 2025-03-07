@@ -1,7 +1,8 @@
 #pragma once
 
-#include "genlocov2_controllers/ObsShaper.h"
+#include "legged_rl_controllers/OnnxController.h"
 
+constexpr int NumDOF = 12;
 
 namespace legged {
 class ActionFilter {
@@ -9,11 +10,11 @@ class ActionFilter {
         ActionFilter();
         ~ActionFilter() = default;
         
-        void filterActions(const vector_t& pd_tars, const vector_t& pd_tars_filtered);
+        void filterActions(const vector_t& pd_tars, vector_t& pd_tars_filtered);
 
         void resetFilter(const vector_t& defaultAngles);
 
-        private:
+    private:
         
         vector_t xhist;
         vector_t yhist;
