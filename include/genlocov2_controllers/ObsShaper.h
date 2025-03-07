@@ -3,11 +3,6 @@
 #include "legged_rl_controllers/OnnxController.h"
 #include <deque>
 
-constexpr int NumDOF = 12;
-constexpr int TokenSize = 32;
-constexpr int HistorySize = 16;
-
-
 namespace legged {
 
 struct DataBlock
@@ -26,6 +21,10 @@ class ObsShaper {
         DataBlock resetValues;
         ObsShaper(); // = default;
         ~ObsShaper() = default;
+
+        size_t numDOF;
+        size_t tokenSize;
+        size_t historySize;
 
         void resetHistoryBuffer();
         void insertObs(const quaternion_t& quaternion, const vector_t& jointPos, const vector_t& actions);

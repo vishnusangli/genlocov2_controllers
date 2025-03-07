@@ -2,8 +2,6 @@
 
 #include "legged_rl_controllers/OnnxController.h"
 
-constexpr int NumDOF = 12;
-
 namespace legged {
 class ActionFilter {
     public:
@@ -13,6 +11,8 @@ class ActionFilter {
         void filterActions(const vector_t& pd_tars, vector_t& pd_tars_filtered);
 
         void resetFilter(const vector_t& defaultAngles);
+
+        size_t numDOF;
 
     private:
         
